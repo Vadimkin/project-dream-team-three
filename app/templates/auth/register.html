@@ -3,11 +3,14 @@
 {% extends "base.html" %}
 {% block title %}Register{% endblock %}
 {% block body %}
-<div class="content-section">
-  <div class="center">
-    <h1>Register for an account</h1>
-    <br/>
-    {{ wtf.quick_form(form) }}
-  </div>
-</div>
+    <div class="content-section">
+        <div class="center">
+            <h1>Register for an account</h1>
+            <br/>
+            {{ wtf.quick_form(form) }}
+            <hr>
+            <a href="{{ url_for('auth.login_facebook') }}" class="btn btn-lg btn-block btn-default">Register via
+                Facebook</a>
+        </div>
+    </div>
 {% endblock %}

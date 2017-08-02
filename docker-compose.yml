@@ -1,0 +1,33 @@
+version: '2'
+services:
+  web:
+    build: .
+    volumes:
+      - .:/dreamteam/
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+     - "5000:5000"
+    working_dir: '/dreamteam/'
+    environment:
+      SQLALCHEMY_DATABASE_URI: 'mysql://dt_admin:dt2016@db/dreamteam_db'
+      SECRET_KEY: 'test'
+      FLASK_CONFIG: 'development'
+      FLASK_APP: 'run.py'
+    command: "python -m flask run --host 0.0.0.0"
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+    volumes:
+      - ./db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: dt_root_password
+      MYSQL_DATABASE: dreamteam_db
+      MYSQL_USER: dt_admin
+      MYSQL_PASSWORD: dt2016

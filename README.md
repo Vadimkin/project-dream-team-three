@@ -46,6 +46,9 @@ Create a directory, `instance`, and in it create a `config.py` file. This file s
 variables:
 * SECRET_KEY
 * SQLALCHEMY_DATABASE_URI (`'mysql://dt_admin:dt2016@localhost/dreamteam_db'`)
+* FACEBOOK_CONSUMER_KEY = 106983993323841
+* FACEBOOK_CONSUMER_SECRET = '836b35d07d0bfe27868d7a6faabe79f6'
+* FACEBOOK_SCOPE = 'id,name,first_name,last_name,picture,verified,email'
 
 ## Launching the Program
 Set the FLASK_APP and FLASK_CONFIG variables as follows:
@@ -67,6 +70,17 @@ mysql> GRANT ALL PRIVILEGES ON dreamteam_test . * TO 'dt_admin'@'localhost';
 ```
 
 To test, run the following command: `python tests.py`
+
+## Run with Docker
+We have a Dockerfile to run this project via Docker
+```
+docker-compose build
+docker-compose exec web flask db migrate
+docker-compose exec web flask db upgrade
+docker-compose up
+```
+
+Then you can open [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser
 
 ## Built With...
 * [Flask](http://flask.pocoo.org/)

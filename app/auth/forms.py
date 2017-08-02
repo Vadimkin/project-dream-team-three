@@ -2,7 +2,22 @@ from flask_wtf import FlaskForm
 from wtforms import PasswordField, StringField, SubmitField, ValidationError
 from wtforms.validators import DataRequired, Email, EqualTo
 
+from app.exceptions import EmployeeUsernameAlreadyExistsException
 from ..models import Employee
+
+
+class FacebookUsernameForm(FlaskForm):
+    """
+    Form for users to login
+    """
+    username = StringField('Username', validators=[DataRequired()])
+    submit = SubmitField('Save')
+
+    def validate_username(self, field):
+        try:
+            Employee.validate_username(field.data)
+        except EmployeeUsernameAlreadyExistsException as e:
+            raise ValidationError(str(e))
 
 
 class RegistrationForm(FlaskForm):

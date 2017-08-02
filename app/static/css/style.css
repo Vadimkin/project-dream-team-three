@@ -8,12 +8,12 @@ body, h1, h2, h3 {
     font-weight: 700;
 }
 
-a, .navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
-  color: #aec251;
+a, .navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+    color: #aec251;
 }
 
-a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
-  color: #687430;
+a:hover, .navbar-default .navbar-brand:hover, .navbar-default .navbar-nav > li > a:hover {
+    color: #687430;
 }
 
 footer {
@@ -54,14 +54,14 @@ p.copyright {
 }
 
 .footer, .push {
-  clear: both;
-  height: 4em;
+    clear: both;
+    height: 4em;
 }
 
 .intro-divider {
     width: 400px;
     border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .intro-header {
@@ -82,12 +82,12 @@ p.copyright {
 
 .intro-message > h1 {
     margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
     font-size: 5em;
 }
 
 .intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
 }
 
 .lead {
@@ -100,10 +100,10 @@ p.copyright {
 }
 
 .wrapper {
-  min-height: 100%;
-  height: auto !important;
-  height: 100%;
-  margin: 0 auto -4em;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
 }
 
 .outer {
@@ -121,4 +121,9 @@ p.copyright {
 .inner {
     margin-left: auto;
     margin-right: auto;
+}
+
+.flush {
+    padding-top: 70px;
+    padding-bottom: 25px;
 }
